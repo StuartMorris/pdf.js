@@ -593,6 +593,9 @@ var WidgetAnnotation = (function WidgetAnnotationClosure() {
     data.fieldType = isName(fieldType) ? fieldType.name : '';
     data.fieldFlags = Util.getInheritableProperty(dict, 'Ff') || 0;
     this.fieldResources = Util.getInheritableProperty(dict, 'DR') || Dict.empty;
+    if (fieldType.name==='Ch') {
++      data.options = dict.get('Opt');
++    }
 
     // Hide unsupported Widget signatures.
     if (data.fieldType === 'Sig') {
